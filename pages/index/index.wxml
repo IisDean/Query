@@ -18,7 +18,7 @@
 </view>
 
 <!-- 第一个表单 -->
-<view class='form-container'>
+<view class='form-container' style="{{progressIndex == 0 ? 'display:block;' : 'display: none;'}}">
   <!-- 选择宽带 -->
   <view class="section-wrap">
     <picker bindchange="pickerbroadband" value="{{broadbandIndex}}" range="{{broadband}}">
@@ -42,25 +42,17 @@
 </view>
 
 <!-- 第二个表单 -->
-<view class='form-container' style='display: none;'>
-  <!-- 选择宽带 -->
-  <view class="section-wrap">
-    <picker bindchange="pickerbroadband" value="{{broadbandIndex}}" range="{{broadband}}">
-      <view class="picker">
-        选宽带：{{broadband[broadbandIndex]}}
-      </view>
-    </picker>
-  </view>
-  <!-- 选择套餐 -->
-  <view class="section-wrap">
-    <picker bindchange="pickersetmeal" value="{{setMealIndex}}" range="{{setMeal}}">
-      <view class="picker">
-        选套餐：{{setMeal[setMealIndex]}}
-      </view>
-    </picker>
-  </view>
-  <!-- 温馨提示 -->
-  <text class='tips-text'>{{tipsText}}</text>
+<view class='form-container' style="{{progressIndex == 1 ? 'display:block;' : 'display: none;'}}">
+  
   <!-- 按钮 -->
   <button class='btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
+</view>
+
+
+<!-- 第三个表单 -->
+<view class='form-container' style="{{progressIndex == 2 ? 'display:block;' : 'display: none;'}}">
+  
+  <!-- 按钮 -->
+  <button class='btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
+  
 </view>

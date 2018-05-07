@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.9",
 	"appid": "wx0e2c9da03becbc58",
-	"projectname": "wxapp",
+	"projectname": "Query",
 	"condition": {
 		"search": {
 			"current": -1,

@@ -5,6 +5,7 @@ const assets = app.assets;
 
 Page({
   data: {
+    //轮播图
     bannerUrls: [
       assets + 'img/banner_01.jpg'
     ],
@@ -39,7 +40,7 @@ Page({
       setMealIndex: e.detail.value
     })
   },
-  //提交信息
+  //完成第一步
   submitMsg: function(e) {
     this.setData({
       progressIndex: this.data.progressIndex += 1
