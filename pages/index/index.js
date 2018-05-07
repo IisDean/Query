@@ -71,13 +71,15 @@ Page({
     });
     if( this.data.progressIndex == 2 ){
       wx.getLocation({
-        type: 'wgs84',
+        type: 'gcj02', //返回可以用于wx.openLocation的经纬度
         success: function (res) {
           var latitude = res.latitude
           var longitude = res.longitude
-          var speed = res.speed
-          var accuracy = res.accuracy
-          console.log(res);
+          wx.openLocation({
+            latitude: latitude,
+            longitude: longitude,
+            scale: 28
+          })
         }
       })
     }
