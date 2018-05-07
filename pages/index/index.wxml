@@ -38,21 +38,47 @@
   <!-- 温馨提示 -->
   <text class='tips-text'>{{tipsText}}</text>
   <!-- 按钮 -->
-  <button class='btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
+  <view class='ui-flex btn-container'>
+    <button class='ui-cell-1 btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
+  </view>
 </view>
 
 <!-- 第二个表单 -->
 <view class='form-container' style="{{progressIndex == 1 ? 'display:block;' : 'display: none;'}}">
-  
+  <!-- 请输入姓名 -->
+  <view class="section-wrap">
+     <input type="text" bindblur="inputUserName" placeholder="请输入姓名" value="{{userName}}" />
+  </view>
+  <!-- 请输入手机号 -->
+  <view class="section-wrap">
+     <input type="tel" maxlength='11' bindblur='inputUserMobile' placeholder="请输入手机号" value="{{userMobile}}" />
+  </view>
+  <!-- 温馨提示 -->
+  <text class='tips-text'>请你放心填写，移动将确保你的个人信息安全</text>
+  <!-- 请输入推荐人电话 -->
+  <view class="section-wrap" style="margin-top: 20px;">
+     <input type="tel" maxlength='11' bindblur="inputReferrerMobile" placeholder="请输入推荐人电话" value="{{referrerMobile}}" />
+  </view>
   <!-- 按钮 -->
-  <button class='btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
+  <view class='ui-flex btn-container'>
+    <button class='ui-cell-1 btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
+  </view>
 </view>
-
 
 <!-- 第三个表单 -->
 <view class='form-container' style="{{progressIndex == 2 ? 'display:block;' : 'display: none;'}}">
-  
+  <!-- 定位 -->
+  <view class='ui-full-img location-icon'>
+    <image mode="aspectFill" src="{{locationIcon}}"></image>
+  </view>
+  <view class='ui-text-center location-text'>
+    <text>你所在的小区为：{{locationText}}</text>
+  </view>
+
   <!-- 按钮 -->
-  <button class='btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
-  
+  <view class='ui-flex btn-container'>
+    <button class='ui-cell-1 btn-wrap' hover-class='btn-click' bindtap="aginSubmit" type='primary'>重新定位</button>
+    <button class='ui-cell-1 btn-wrap' hover-class='btn-click' bindtap="confirmBtn" type='primary'>是这没错</button>
+  </view>  
+
 </view>
