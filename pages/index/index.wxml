@@ -1,0 +1,66 @@
+<!-- 头部 -->
+<swiper class="banner-wrap" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{bannerUrls}}">
+    <swiper-item class="ui-full-img">
+      <image mode='{{bannerMode}}' width="{{imgwidth}}" height="{{imgheight}}" src="{{item}}" class="slide-image" bindload="imageLoad" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 进度条 -->
+<view class='progress-container'>
+  <progress class='progress-wrap' color='#0a8cfe' active='{{progressAnimation}}' percent="{{progress[progressIndex]}}" />
+  <view class='ui-abs-center ui-flex-around ui-text-center progress-node'>
+    <view class="node-wrap {{progressIndex >= 0 ? 'active' : ''}}">1</view>
+    <view class="node-wrap {{progressIndex >= 1 ? 'active' : ''}}">2</view>
+    <view class="node-wrap {{progressIndex >= 2 ? 'active' : ''}}">3</view>
+  </view>
+</view>
+
+<!-- 第一个表单 -->
+<view class='form-container'>
+  <!-- 选择宽带 -->
+  <view class="section-wrap">
+    <picker bindchange="pickerbroadband" value="{{broadbandIndex}}" range="{{broadband}}">
+      <view class="picker">
+        选宽带：{{broadband[broadbandIndex]}}
+      </view>
+    </picker>
+  </view>
+  <!-- 选择套餐 -->
+  <view class="section-wrap">
+    <picker bindchange="pickersetmeal" value="{{setMealIndex}}" range="{{setMeal}}">
+      <view class="picker">
+        选套餐：{{setMeal[setMealIndex]}}
+      </view>
+    </picker>
+  </view>
+  <!-- 温馨提示 -->
+  <text class='tips-text'>{{tipsText}}</text>
+  <!-- 按钮 -->
+  <button class='btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
+</view>
+
+<!-- 第二个表单 -->
+<view class='form-container' style='display: none;'>
+  <!-- 选择宽带 -->
+  <view class="section-wrap">
+    <picker bindchange="pickerbroadband" value="{{broadbandIndex}}" range="{{broadband}}">
+      <view class="picker">
+        选宽带：{{broadband[broadbandIndex]}}
+      </view>
+    </picker>
+  </view>
+  <!-- 选择套餐 -->
+  <view class="section-wrap">
+    <picker bindchange="pickersetmeal" value="{{setMealIndex}}" range="{{setMeal}}">
+      <view class="picker">
+        选套餐：{{setMeal[setMealIndex]}}
+      </view>
+    </picker>
+  </view>
+  <!-- 温馨提示 -->
+  <text class='tips-text'>{{tipsText}}</text>
+  <!-- 按钮 -->
+  <button class='btn-wrap' hover-class='btn-click' bindtap="submitMsg" type='primary'>选好啦 》</button>
+</view>
